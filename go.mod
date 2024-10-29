@@ -1,4 +1,4 @@
-module github.com/shillbie/register
+module github.com/aaa71541367/register
 
 go 1.17
 
