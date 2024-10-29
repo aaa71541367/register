@@ -11,8 +11,8 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/shillbie/register/LineThrift"
-	"github.com/shillbie/register/thrift"
+	"github.com/aaa71541367/register/LineThrift"
+	"github.com/aaa71541367/register/thrift"
 
 	"golang.org/x/sync/errgroup"
 )

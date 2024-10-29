@@ -13,7 +13,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/shillbie/register/LineThrift"
+	"github.com/aaa71541367/register/LineThrift"
 	"github.com/valyala/fasthttp"
 
 	"github.com/utahta/go-linenotify"

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/shillbie/register/thrift"
+	"github.com/aaa71541367/register/thrift"
 )
 
 type AuthErrorCode int64
@@ -550,9 +550,9 @@ func (p *AvailableMethod) Value() (driver.Value, error) {
 }
 
 // Attributes:
-//  - Code
-//  - AlertMessage
-//  - WebAuthDetails
+//   - Code
+//   - AlertMessage
+//   - WebAuthDetails
 type AuthException struct {
 	Code         AuthErrorCode `thrift:"code,1" db:"code" json:"code"`
 	AlertMessage string        `thrift:"alertMessage,2" db:"alertMessage" json:"alertMessage"`
@@ -745,7 +745,7 @@ func (p *AuthException) Error() string {
 }
 
 // Attributes:
-//  - AuthToken
+//   - AuthToken
 type RegisterPrimaryResponse struct {
 	AuthToken string `thrift:"authToken,1" db:"authToken" json:"authToken"`
 }
@@ -844,7 +844,7 @@ func (p *RegisterPrimaryResponse) String() string {
 }
 
 // Attributes:
-//  - AuthToken
+//   - AuthToken
 type MigratePrimaryResponse struct {
 	AuthToken string `thrift:"authToken,1" db:"authToken" json:"authToken"`
 }
@@ -943,7 +943,7 @@ func (p *MigratePrimaryResponse) String() string {
 }
 
 // Attributes:
-//  - SecondAuthMethod
+//   - SecondAuthMethod
 type GetSecondAuthMethodResponse struct {
 	SecondAuthMethod SecondAuthMethod `thrift:"secondAuthMethod,1" db:"secondAuthMethod" json:"secondAuthMethod"`
 }
@@ -1043,8 +1043,8 @@ func (p *GetSecondAuthMethodResponse) String() string {
 }
 
 // Attributes:
-//  - BaseUrl
-//  - Token
+//   - BaseUrl
+//   - Token
 type WebAuthDetails struct {
 	BaseUrl string `thrift:"baseUrl,1" db:"baseUrl" json:"baseUrl"`
 	Token   string `thrift:"token,2" db:"token" json:"token"`
@@ -1183,7 +1183,7 @@ func (p *WebAuthDetails) String() string {
 }
 
 // Attributes:
-//  - WebAuthDetails
+//   - WebAuthDetails
 type IssueWebAuthDetailsForSecondAuthResponse struct {
 	WebAuthDetails *WebAuthDetails `thrift:"webAuthDetails,1" db:"webAuthDetails" json:"webAuthDetails"`
 }
@@ -1290,7 +1290,7 @@ func (p *IssueWebAuthDetailsForSecondAuthResponse) String() string {
 }
 
 // Attributes:
-//  - WebAuthDetails
+//   - WebAuthDetails
 type IssueWebAuthDetailsForAcctVerifResponse struct {
 	WebAuthDetails *WebAuthDetails `thrift:"webAuthDetails,1" db:"webAuthDetails" json:"webAuthDetails"`
 }
@@ -1397,9 +1397,9 @@ func (p *IssueWebAuthDetailsForAcctVerifResponse) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - Identifier
-//  - CountryCode
+//   - Type
+//   - Identifier
+//   - CountryCode
 type AccountIdentifier struct {
 	Type       AccountIdentifierType `thrift:"type,1" db:"type" json:"type"`
 	Identifier string                `thrift:"identifier,2" db:"identifier" json:"identifier"`
@@ -1580,7 +1580,7 @@ func (p *AccountIdentifier) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type OpenSessionResponse struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -1679,7 +1679,7 @@ func (p *OpenSessionResponse) String() string {
 }
 
 // Attributes:
-//  - MetaData
+//   - MetaData
 type OpenSessionRequest struct {
 	MetaData map[string]string `thrift:"metaData,1" db:"metaData" json:"metaData"`
 }
@@ -1808,7 +1808,7 @@ func (p *OpenSessionRequest) String() string {
 }
 
 // Attributes:
-//  - UserProfile
+//   - UserProfile
 type VerifyAccountUsingPwdResponse struct {
 	// unused field # 1
 	UserProfile *UserProfile `thrift:"userProfile,2" db:"userProfile" json:"userProfile"`
@@ -1916,8 +1916,8 @@ func (p *VerifyAccountUsingPwdResponse) String() string {
 }
 
 // Attributes:
-//  - EncryptionKeyVersion
-//  - CipherText
+//   - EncryptionKeyVersion
+//   - CipherText
 type EncryptedPassword struct {
 	EncryptionKeyVersion EncryptionKeyVersion `thrift:"encryptionKeyVersion,1" db:"encryptionKeyVersion" json:"encryptionKeyVersion"`
 	CipherText           string               `thrift:"cipherText,2" db:"cipherText" json:"cipherText"`
@@ -2057,9 +2057,9 @@ func (p *EncryptedPassword) String() string {
 }
 
 // Attributes:
-//  - AccountExist
-//  - UserProfile
-//  - SameUdidFromAccount
+//   - AccountExist
+//   - UserProfile
+//   - SameUdidFromAccount
 type VerifySocialLoginResponse struct {
 	// unused field # 1
 	AccountExist bool `thrift:"accountExist,2" db:"accountExist" json:"accountExist"`
@@ -2248,8 +2248,8 @@ func (p *VerifySocialLoginResponse) String() string {
 }
 
 // Attributes:
-//  - Udid
-//  - DeviceModel
+//   - Udid
+//   - DeviceModel
 type Device struct {
 	Udid        string `thrift:"udid,1" db:"udid" json:"udid"`
 	DeviceModel string `thrift:"deviceModel,2" db:"deviceModel" json:"deviceModel"`
@@ -2388,8 +2388,8 @@ func (p *Device) String() string {
 }
 
 // Attributes:
-//  - DeviceModel
-//  - Udid
+//   - DeviceModel
+//   - Udid
 type Device2 struct {
 	DeviceModel string `thrift:"deviceModel,1" db:"deviceModel" json:"deviceModel"`
 	Udid        string `thrift:"udid,2" db:"udid" json:"udid"`
@@ -2543,9 +2543,9 @@ func (p *Device2) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - AccessToken
-//  - CountryCode
+//   - Type
+//   - AccessToken
+//   - CountryCode
 type SocialLogin struct {
 	Type        SocialLoginType `thrift:"type,1" db:"type" json:"type"`
 	AccessToken string          `thrift:"accessToken,2" db:"accessToken" json:"accessToken"`
@@ -2725,8 +2725,8 @@ func (p *SocialLogin) String() string {
 }
 
 // Attributes:
-//  - AvailableMethods
-//  - PrettifiedPhoneNumber
+//   - AvailableMethods
+//   - PrettifiedPhoneNumber
 type GetPhoneVerifMethodResponse struct {
 	AvailableMethods []VerifMethod `thrift:"availableMethods,1" db:"availableMethods" json:"availableMethods"`
 	// unused field # 2
@@ -2888,8 +2888,8 @@ func (p *GetPhoneVerifMethodResponse) String() string {
 }
 
 // Attributes:
-//  - PhoneNumber
-//  - CountryCode
+//   - PhoneNumber
+//   - CountryCode
 type UserPhoneNumber struct {
 	PhoneNumber string `thrift:"phoneNumber,1" db:"phoneNumber" json:"phoneNumber"`
 	CountryCode string `thrift:"countryCode,2" db:"countryCode" json:"countryCode"`
@@ -3028,7 +3028,7 @@ func (p *UserPhoneNumber) String() string {
 }
 
 // Attributes:
-//  - AvailableMethods
+//   - AvailableMethods
 type SendPinCodeForPhoneResponse struct {
 	AvailableMethods []VerifMethod `thrift:"availableMethods,1" db:"availableMethods" json:"availableMethods"`
 }
@@ -3149,9 +3149,9 @@ func (p *SendPinCodeForPhoneResponse) String() string {
 }
 
 // Attributes:
-//  - AccountExist
-//  - SameUdidFromAccount
-//  - UserProfile
+//   - AccountExist
+//   - SameUdidFromAccount
+//   - UserProfile
 type VerifyPhoneResponse struct {
 	// unused field # 1
 	AccountExist        bool `thrift:"accountExist,2" db:"accountExist" json:"accountExist"`
@@ -3340,8 +3340,8 @@ func (p *VerifyPhoneResponse) String() string {
 }
 
 // Attributes:
-//  - PublicKey
-//  - Nonce
+//   - PublicKey
+//   - Nonce
 type ExchangeEncryptionKeyResponse struct {
 	PublicKey string `thrift:"publicKey,1" db:"publicKey" json:"publicKey"`
 	Nonce     string `thrift:"nonce,2" db:"nonce" json:"nonce"`
@@ -3480,9 +3480,9 @@ func (p *ExchangeEncryptionKeyResponse) String() string {
 }
 
 // Attributes:
-//  - AuthKeyVersion
-//  - PublicKey
-//  - Nonce
+//   - AuthKeyVersion
+//   - PublicKey
+//   - Nonce
 type ExchangeEncryptionKeyRequest struct {
 	AuthKeyVersion EncryptionKeyVersion `thrift:"authKeyVersion,1" db:"authKeyVersion" json:"authKeyVersion"`
 	PublicKey      string               `thrift:"publicKey,2" db:"publicKey" json:"publicKey"`
@@ -3662,9 +3662,9 @@ func (p *ExchangeEncryptionKeyRequest) String() string {
 }
 
 // Attributes:
-//  - CountryCode
-//  - CountryInEEA
-//  - CountrySetOfEEA
+//   - CountryCode
+//   - CountryInEEA
+//   - CountrySetOfEEA
 type GetCountryInfoResponse struct {
 	CountryCode     string   `thrift:"countryCode,1" db:"countryCode" json:"countryCode"`
 	CountryInEEA    bool     `thrift:"countryInEEA,2" db:"countryInEEA" json:"countryInEEA"`
@@ -3871,9 +3871,9 @@ func (p *GetCountryInfoResponse) String() string {
 }
 
 // Attributes:
-//  - CountryCode
-//  - Hni
-//  - CarrierName
+//   - CountryCode
+//   - Hni
+//   - CarrierName
 type SimCard struct {
 	CountryCode string `thrift:"countryCode,1" db:"countryCode" json:"countryCode"`
 	Hni         string `thrift:"hni,2" db:"hni" json:"hni"`
@@ -4052,7 +4052,7 @@ func (p *SimCard) String() string {
 }
 
 // Attributes:
-//  - UserProfile
+//   - UserProfile
 type GetUserProfileResponse struct {
 	UserProfile *UserProfile `thrift:"userProfile,1" db:"userProfile" json:"userProfile"`
 }
@@ -4159,8 +4159,8 @@ func (p *GetUserProfileResponse) String() string {
 }
 
 // Attributes:
-//  - AvailableMethod
-//  - SameAccountFromAuthFactor
+//   - AvailableMethod
+//   - SameAccountFromAuthFactor
 type GetAcctVerifMethodResponse struct {
 	AvailableMethod           AvailableMethod `thrift:"availableMethod,1" db:"availableMethod" json:"availableMethod"`
 	SameAccountFromAuthFactor bool            `thrift:"sameAccountFromAuthFactor,2" db:"sameAccountFromAuthFactor" json:"sameAccountFromAuthFactor"`
@@ -4300,8 +4300,8 @@ func (p *GetAcctVerifMethodResponse) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - UserPhoneNumber
+//   - AuthSessionId
+//   - UserPhoneNumber
 type FetchPhonePinCodeMsgRequest struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	UserPhoneNumber *UserPhoneNumber `thrift:"userPhoneNumber,2" db:"userPhoneNumber" json:"userPhoneNumber"`
@@ -4448,8 +4448,8 @@ func (p *FetchPhonePinCodeMsgRequest) String() string {
 }
 
 // Attributes:
-//  - PinCodeMessage
-//  - DestinationPhoneNumber
+//   - PinCodeMessage
+//   - DestinationPhoneNumber
 type FetchPhonePinCodeMsgResponse struct {
 	PinCodeMessage         string `thrift:"pinCodeMessage,1" db:"pinCodeMessage" json:"pinCodeMessage"`
 	DestinationPhoneNumber string `thrift:"destinationPhoneNumber,2" db:"destinationPhoneNumber" json:"destinationPhoneNumber"`
@@ -4588,9 +4588,9 @@ func (p *FetchPhonePinCodeMsgResponse) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
 type GetPhoneVerifMethodV2Request struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	Device          *Device          `thrift:"device,2" db:"device" json:"device"`
@@ -4785,8 +4785,8 @@ func (p *GetPhoneVerifMethodV2Request) String() string {
 }
 
 // Attributes:
-//  - AvailableMethods
-//  - PrettifiedPhoneNumber
+//   - AvailableMethods
+//   - PrettifiedPhoneNumber
 type GetPhoneVerifMethodV2Response struct {
 	AvailableMethods []AvailableMethods `thrift:"availableMethods,1" db:"availableMethods" json:"availableMethods"`
 	// unused field # 2
@@ -4948,9 +4948,9 @@ func (p *GetPhoneVerifMethodV2Response) String() string {
 }
 
 // Attributes:
-//  - HasLastKey
-//  - StartTimeMillis
-//  - EndTimeMillis
+//   - HasLastKey
+//   - StartTimeMillis
+//   - EndTimeMillis
 type E2EEKeyBackupInfoForMigration struct {
 	HasLastKey      bool  `thrift:"hasLastKey,1" db:"hasLastKey" json:"hasLastKey"`
 	StartTimeMillis int64 `thrift:"startTimeMillis,2" db:"startTimeMillis" json:"startTimeMillis"`
@@ -5129,9 +5129,9 @@ func (p *E2EEKeyBackupInfoForMigration) String() string {
 }
 
 // Attributes:
-//  - AppTypeDifferentFromPrevDevice
-//  - E2eeKeyBackupServiceConfig
-//  - E2eeKeyBackupInfo
+//   - AppTypeDifferentFromPrevDevice
+//   - E2eeKeyBackupServiceConfig
+//   - E2eeKeyBackupInfo
 type GetSessionContentBeforeMigCompletionResponse struct {
 	AppTypeDifferentFromPrevDevice bool                           `thrift:"appTypeDifferentFromPrevDevice,1" db:"appTypeDifferentFromPrevDevice" json:"appTypeDifferentFromPrevDevice"`
 	E2eeKeyBackupServiceConfig     bool                           `thrift:"e2eeKeyBackupServiceConfig,2" db:"e2eeKeyBackupServiceConfig" json:"e2eeKeyBackupServiceConfig"`
@@ -5318,10 +5318,10 @@ func (p *GetSessionContentBeforeMigCompletionResponse) String() string {
 }
 
 // Attributes:
-//  - InitialDelayInMillis
-//  - MaxDelayInMillis
-//  - Multiplier
-//  - JitterRate
+//   - InitialDelayInMillis
+//   - MaxDelayInMillis
+//   - Multiplier
+//   - JitterRate
 type RefreshApiRetryPolicy struct {
 	InitialDelayInMillis int64   `thrift:"initialDelayInMillis,1" db:"initialDelayInMillis" json:"initialDelayInMillis"`
 	MaxDelayInMillis     int64   `thrift:"maxDelayInMillis,2" db:"maxDelayInMillis" json:"maxDelayInMillis"`
@@ -5540,12 +5540,12 @@ func (p *RefreshApiRetryPolicy) String() string {
 }
 
 // Attributes:
-//  - AccessToken
-//  - RefreshToken
-//  - DurationUntilRefreshInSec
-//  - RefreshApiRetryPolicy
-//  - LoginSessionId
-//  - TokenIssueTimeEpochSec
+//   - AccessToken
+//   - RefreshToken
+//   - DurationUntilRefreshInSec
+//   - RefreshApiRetryPolicy
+//   - LoginSessionId
+//   - TokenIssueTimeEpochSec
 type TokenV3IssueResult_ struct {
 	AccessToken               string                 `thrift:"accessToken,1" db:"accessToken" json:"accessToken"`
 	RefreshToken              string                 `thrift:"refreshToken,2" db:"refreshToken" json:"refreshToken"`
@@ -5852,12 +5852,12 @@ func (p *TokenV3IssueResult_) String() string {
 }
 
 // Attributes:
-//  - AuthToken
-//  - TokenV3IssueResult_
-//  - CountryCode
-//  - PrettifiedFormatPhoneNumber
-//  - LocalFormatPhoneNumber
-//  - Mid
+//   - AuthToken
+//   - TokenV3IssueResult_
+//   - CountryCode
+//   - PrettifiedFormatPhoneNumber
+//   - LocalFormatPhoneNumber
+//   - Mid
 type MigratePrimaryWithTokenV3Response struct {
 	AuthToken                   string               `thrift:"authToken,1" db:"authToken" json:"authToken"`
 	TokenV3IssueResult_         *TokenV3IssueResult_ `thrift:"tokenV3IssueResult,2" db:"tokenV3IssueResult" json:"tokenV3IssueResult"`
@@ -6164,9 +6164,9 @@ func (p *MigratePrimaryWithTokenV3Response) String() string {
 }
 
 // Attributes:
-//  - AuthToken
-//  - TokenV3IssueResult_
-//  - Mid
+//   - AuthToken
+//   - TokenV3IssueResult_
+//   - Mid
 type RegisterPrimaryWithTokenV3Response struct {
 	AuthToken           string               `thrift:"authToken,1" db:"authToken" json:"authToken"`
 	TokenV3IssueResult_ *TokenV3IssueResult_ `thrift:"tokenV3IssueResult,2" db:"tokenV3IssueResult" json:"tokenV3IssueResult"`
@@ -6353,9 +6353,9 @@ func (p *RegisterPrimaryWithTokenV3Response) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - UserPhoneNumber
-//  - VerifMethod
+//   - AuthSessionId
+//   - UserPhoneNumber
+//   - VerifMethod
 type ReqToSendPhonePinCodeRequest struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	UserPhoneNumber *UserPhoneNumber `thrift:"userPhoneNumber,2" db:"userPhoneNumber" json:"userPhoneNumber"`
@@ -6543,7 +6543,7 @@ func (p *ReqToSendPhonePinCodeRequest) String() string {
 }
 
 // Attributes:
-//  - AvailableMethods
+//   - AvailableMethods
 type ReqToSendPhonePinCodeResponse struct {
 	AvailableMethods []AvailableMethods `thrift:"availableMethods,1" db:"availableMethods" json:"availableMethods"`
 }
@@ -6664,9 +6664,9 @@ func (p *ReqToSendPhonePinCodeResponse) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - UserPhoneNumber
-//  - PinCode
+//   - AuthSessionId
+//   - UserPhoneNumber
+//   - PinCode
 type VerifyPhonePinCodeRequest struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	UserPhoneNumber *UserPhoneNumber `thrift:"userPhoneNumber,2" db:"userPhoneNumber" json:"userPhoneNumber"`
@@ -6853,9 +6853,9 @@ func (p *VerifyPhonePinCodeRequest) String() string {
 }
 
 // Attributes:
-//  - AccountExist
-//  - SameUdidFromAccount
-//  - UserProfile
+//   - AccountExist
+//   - SameUdidFromAccount
+//   - UserProfile
 type VerifyPhonePinCodeResponse struct {
 	AccountExist        bool `thrift:"accountExist,1" db:"accountExist" json:"accountExist"`
 	SameUdidFromAccount bool `thrift:"sameUdidFromAccount,2" db:"sameUdidFromAccount" json:"sameUdidFromAccount"`
@@ -7175,7 +7175,7 @@ func (p *PrimaryAccountInitServiceClient) Client_() thrift.TClient {
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryAccountInitServiceClient) FetchPhonePinCodeMsg(ctx context.Context, request *FetchPhonePinCodeMsgRequest) (r *FetchPhonePinCodeMsgResponse, err error) {
 	var _args7 PrimaryAccountInitServiceFetchPhonePinCodeMsgArgs
 	_args7.Request = request
@@ -7192,7 +7192,7 @@ func (p *PrimaryAccountInitServiceClient) FetchPhonePinCodeMsg(ctx context.Conte
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryAccountInitServiceClient) GetPhoneVerifMethodV2(ctx context.Context, request *GetPhoneVerifMethodV2Request) (r *GetPhoneVerifMethodV2Response, err error) {
 	var _args13 PrimaryAccountInitServiceGetPhoneVerifMethodV2Args
 	_args13.Request = request
@@ -7209,7 +7209,7 @@ func (p *PrimaryAccountInitServiceClient) GetPhoneVerifMethodV2(ctx context.Cont
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) GetSessionContentBeforeMigCompletion(ctx context.Context, authSessionId string) (r *GetSessionContentBeforeMigCompletionResponse, err error) {
 	var _args17 PrimaryAccountInitServiceGetSessionContentBeforeMigCompletionArgs
 	_args17.AuthSessionId = authSessionId
@@ -7226,7 +7226,7 @@ func (p *PrimaryAccountInitServiceClient) GetSessionContentBeforeMigCompletion(c
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingEapAccountWithTokenV3(ctx context.Context, authSessionId string) (r *MigratePrimaryWithTokenV3Response, err error) {
 	var _args25 PrimaryAccountInitServiceMigratePrimaryUsingEapAccountWithTokenV3Args
 	_args25.AuthSessionId = authSessionId
@@ -7243,7 +7243,7 @@ func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingEapAccountWithToken
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingPhoneWithTokenV3(ctx context.Context, authSessionId string) (r *MigratePrimaryWithTokenV3Response, err error) {
 	var _args27 PrimaryAccountInitServiceMigratePrimaryUsingPhoneWithTokenV3Args
 	_args27.AuthSessionId = authSessionId
@@ -7260,7 +7260,7 @@ func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingPhoneWithTokenV3(ct
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) RegisterPrimaryUsingPhoneWithTokenV3(ctx context.Context, authSessionId string) (r *RegisterPrimaryWithTokenV3Response, err error) {
 	var _args31 PrimaryAccountInitServiceRegisterPrimaryUsingPhoneWithTokenV3Args
 	_args31.AuthSessionId = authSessionId
@@ -7277,7 +7277,7 @@ func (p *PrimaryAccountInitServiceClient) RegisterPrimaryUsingPhoneWithTokenV3(c
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryAccountInitServiceClient) RequestToSendPhonePinCode(ctx context.Context, request *ReqToSendPhonePinCodeRequest) (r *ReqToSendPhonePinCodeResponse, err error) {
 	var _args35 PrimaryAccountInitServiceRequestToSendPhonePinCodeArgs
 	_args35.Request = request
@@ -7294,7 +7294,7 @@ func (p *PrimaryAccountInitServiceClient) RequestToSendPhonePinCode(ctx context.
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryAccountInitServiceClient) VerifyPhonePinCode(ctx context.Context, request *VerifyPhonePinCodeRequest) (r *VerifyPhonePinCodeResponse, err error) {
 	var _args43 PrimaryAccountInitServiceVerifyPhonePinCodeArgs
 	_args43.Request = request
@@ -7311,7 +7311,7 @@ func (p *PrimaryAccountInitServiceClient) VerifyPhonePinCode(ctx context.Context
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) RegisterPrimaryUsingPhone(ctx context.Context, authSessionId string) (r *RegisterPrimaryResponse, err error) {
 	var _args5 PrimaryAccountInitServiceRegisterPrimaryUsingPhoneArgs
 	_args5.AuthSessionId = authSessionId
@@ -7328,7 +7328,7 @@ func (p *PrimaryAccountInitServiceClient) RegisterPrimaryUsingPhone(ctx context.
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryAccountInitServiceClient) LookupAvailableEap(ctx context.Context, request *LookupAvailableEapRequest) (_r *LookupAvailableEapResponse, _err error) {
 	var _args88 PrimaryAccountInitServiceLookupAvailableEapArgs
 	_args88.Request = request
@@ -7349,7 +7349,7 @@ func (p *PrimaryAccountInitServiceClient) LookupAvailableEap(ctx context.Context
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) RegisterPrimaryUsingSocialLogin(ctx context.Context, authSessionId string) (r *RegisterPrimaryResponse, err error) {
 	var _args7 PrimaryAccountInitServiceRegisterPrimaryUsingSocialLoginArgs
 	_args7.AuthSessionId = authSessionId
@@ -7366,7 +7366,7 @@ func (p *PrimaryAccountInitServiceClient) RegisterPrimaryUsingSocialLogin(ctx co
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingSocialLogin(ctx context.Context, authSessionId string) (r *MigratePrimaryResponse, err error) {
 	var _args9 PrimaryAccountInitServiceMigratePrimaryUsingSocialLoginArgs
 	_args9.AuthSessionId = authSessionId
@@ -7383,7 +7383,7 @@ func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingSocialLogin(ctx con
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingPhone(ctx context.Context, authSessionId string) (r *MigratePrimaryResponse, err error) {
 	var _args11 PrimaryAccountInitServiceMigratePrimaryUsingPhoneArgs
 	_args11.AuthSessionId = authSessionId
@@ -7400,7 +7400,7 @@ func (p *PrimaryAccountInitServiceClient) MigratePrimaryUsingPhone(ctx context.C
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) GetSecondAuthMethod(ctx context.Context, authSessionId string) (r *GetSecondAuthMethodResponse, err error) {
 	var _args13 PrimaryAccountInitServiceGetSecondAuthMethodArgs
 	_args13.AuthSessionId = authSessionId
@@ -7417,7 +7417,7 @@ func (p *PrimaryAccountInitServiceClient) GetSecondAuthMethod(ctx context.Contex
 }
 
 // Parameters:
-//  - AuthSessionId
+//   - AuthSessionId
 func (p *PrimaryAccountInitServiceClient) IssueWebAuthDetailsForSecondAuth(ctx context.Context, authSessionId string) (r *IssueWebAuthDetailsForSecondAuthResponse, err error) {
 	var _args15 PrimaryAccountInitServiceIssueWebAuthDetailsForSecondAuthArgs
 	_args15.AuthSessionId = authSessionId
@@ -7434,8 +7434,8 @@ func (p *PrimaryAccountInitServiceClient) IssueWebAuthDetailsForSecondAuth(ctx c
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - AccountIdentifier
+//   - AuthSessionId
+//   - AccountIdentifier
 func (p *PrimaryAccountInitServiceClient) IssueWebAuthDetailsForAcctVerif(ctx context.Context, authSessionId string, accountIdentifier *AccountIdentifier) (r *IssueWebAuthDetailsForAcctVerifResponse, err error) {
 	var _args17 PrimaryAccountInitServiceIssueWebAuthDetailsForAcctVerifArgs
 	_args17.AuthSessionId = authSessionId
@@ -7453,7 +7453,7 @@ func (p *PrimaryAccountInitServiceClient) IssueWebAuthDetailsForAcctVerif(ctx co
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryAccountInitServiceClient) OpenSession(ctx context.Context, request *OpenSessionRequest) (r string, err error) {
 	var _args19 PrimaryAccountInitServiceOpenSessionArgs
 	_args19.Request = request
@@ -7470,9 +7470,9 @@ func (p *PrimaryAccountInitServiceClient) OpenSession(ctx context.Context, reque
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - AccountIdentifier
-//  - EncryptedPassword
+//   - AuthSessionId
+//   - AccountIdentifier
+//   - EncryptedPassword
 func (p *PrimaryAccountInitServiceClient) VerifyAccountUsingPwd(ctx context.Context, authSessionId string, accountIdentifier *AccountIdentifier, encryptedPassword *EncryptedPassword) (r *VerifyAccountUsingPwdResponse, err error) {
 	var _args21 PrimaryAccountInitServiceVerifyAccountUsingPwdArgs
 	_args21.AuthSessionId = authSessionId
@@ -7491,9 +7491,9 @@ func (p *PrimaryAccountInitServiceClient) VerifyAccountUsingPwd(ctx context.Cont
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - Device
-//  - SocialLogin
+//   - AuthSessionId
+//   - Device
+//   - SocialLogin
 func (p *PrimaryAccountInitServiceClient) VerifySocialLogin(ctx context.Context, authSessionId string, device *Device, socialLogin *SocialLogin) (r *VerifySocialLoginResponse, err error) {
 	var _args23 PrimaryAccountInitServiceVerifySocialLoginArgs
 	_args23.AuthSessionId = authSessionId
@@ -7512,9 +7512,9 @@ func (p *PrimaryAccountInitServiceClient) VerifySocialLogin(ctx context.Context,
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
 func (p *PrimaryAccountInitServiceClient) GetPhoneVerifMethod(ctx context.Context, authSessionId string, device *Device, userPhoneNumber *UserPhoneNumber) (r *GetPhoneVerifMethodResponse, err error) {
 	var _args25 PrimaryAccountInitServiceGetPhoneVerifMethodArgs
 	_args25.AuthSessionId = authSessionId
@@ -7533,10 +7533,10 @@ func (p *PrimaryAccountInitServiceClient) GetPhoneVerifMethod(ctx context.Contex
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
-//  - VerifMethod
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
+//   - VerifMethod
 func (p *PrimaryAccountInitServiceClient) SendPinCodeForPhone(ctx context.Context, authSessionId string, device *Device, userPhoneNumber *UserPhoneNumber, verifMethod VerifMethod) (r *SendPinCodeForPhoneResponse, err error) {
 	var _args27 PrimaryAccountInitServiceSendPinCodeForPhoneArgs
 	_args27.AuthSessionId = authSessionId
@@ -7556,10 +7556,10 @@ func (p *PrimaryAccountInitServiceClient) SendPinCodeForPhone(ctx context.Contex
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
-//  - PinCode
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
+//   - PinCode
 func (p *PrimaryAccountInitServiceClient) VerifyPhone(ctx context.Context, authSessionId string, device *Device, userPhoneNumber *UserPhoneNumber, pinCode string) (r *VerifyPhoneResponse, err error) {
 	var _args29 PrimaryAccountInitServiceVerifyPhoneArgs
 	_args29.AuthSessionId = authSessionId
@@ -7579,8 +7579,8 @@ func (p *PrimaryAccountInitServiceClient) VerifyPhone(ctx context.Context, authS
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - EncryptedPassword
+//   - AuthSessionId
+//   - EncryptedPassword
 func (p *PrimaryAccountInitServiceClient) SetPassword(ctx context.Context, authSessionId string, encryptedPassword *EncryptedPassword) (err error) {
 	var _args31 PrimaryAccountInitServiceSetPasswordArgs
 	_args31.AuthSessionId = authSessionId
@@ -7598,8 +7598,8 @@ func (p *PrimaryAccountInitServiceClient) SetPassword(ctx context.Context, authS
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - Request
+//   - AuthSessionId
+//   - Request
 func (p *PrimaryAccountInitServiceClient) ExchangeEncryptionKey(ctx context.Context, authSessionId string, request *ExchangeEncryptionKeyRequest) (r *ExchangeEncryptionKeyResponse, err error) {
 	var _args33 PrimaryAccountInitServiceExchangeEncryptionKeyArgs
 	_args33.AuthSessionId = authSessionId
@@ -7617,8 +7617,8 @@ func (p *PrimaryAccountInitServiceClient) ExchangeEncryptionKey(ctx context.Cont
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - SimCard
+//   - AuthSessionId
+//   - SimCard
 func (p *PrimaryAccountInitServiceClient) GetCountryInfo(ctx context.Context, authSessionId string, simCard *SimCard) (r *GetCountryInfoResponse, err error) {
 	var _args35 PrimaryAccountInitServiceGetCountryInfoArgs
 	_args35.AuthSessionId = authSessionId
@@ -7636,8 +7636,8 @@ func (p *PrimaryAccountInitServiceClient) GetCountryInfo(ctx context.Context, au
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - AccountIdentifier
+//   - AuthSessionId
+//   - AccountIdentifier
 func (p *PrimaryAccountInitServiceClient) GetUserProfile(ctx context.Context, authSessionId string, accountIdentifier *AccountIdentifier) (r *GetUserProfileResponse, err error) {
 	var _args37 PrimaryAccountInitServiceGetUserProfileArgs
 	_args37.AuthSessionId = authSessionId
@@ -7655,8 +7655,8 @@ func (p *PrimaryAccountInitServiceClient) GetUserProfile(ctx context.Context, au
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - AccountIdentifier
+//   - AuthSessionId
+//   - AccountIdentifier
 func (p *PrimaryAccountInitServiceClient) GetAcctVerifMethod(ctx context.Context, authSessionId string, accountIdentifier *AccountIdentifier) (r *GetAcctVerifMethodResponse, err error) {
 	var _args39 PrimaryAccountInitServiceGetAcctVerifMethodArgs
 	_args39.AuthSessionId = authSessionId
@@ -7674,8 +7674,8 @@ func (p *PrimaryAccountInitServiceClient) GetAcctVerifMethod(ctx context.Context
 }
 
 // Parameters:
-//  - AuthSessionId
-//  - DisplayName
+//   - AuthSessionId
+//   - DisplayName
 func (p *PrimaryAccountInitServiceClient) ValidateProfile(ctx context.Context, authSessionId string, displayName string) (err error) {
 	var _args41 PrimaryAccountInitServiceValidateProfileArgs
 	_args41.AuthSessionId = authSessionId
@@ -7695,7 +7695,7 @@ func (p *PrimaryAccountInitServiceClient) ValidateProfile(ctx context.Context, a
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceRegisterPrimaryUsingPhoneArgs struct {
 	// unused field # 1
 	AuthSessionId string `thrift:"authSessionId,2" db:"authSessionId" json:"authSessionId"`
@@ -7795,8 +7795,8 @@ func (p *PrimaryAccountInitServiceRegisterPrimaryUsingPhoneArgs) String() string
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceRegisterPrimaryUsingPhoneResult struct {
 	Success *RegisterPrimaryResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException           `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -7955,7 +7955,7 @@ func (p *PrimaryAccountInitServiceRegisterPrimaryUsingPhoneResult) String() stri
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceRegisterPrimaryUsingSocialLoginArgs struct {
 	// unused field # 1
 	AuthSessionId string `thrift:"authSessionId,2" db:"authSessionId" json:"authSessionId"`
@@ -8055,8 +8055,8 @@ func (p *PrimaryAccountInitServiceRegisterPrimaryUsingSocialLoginArgs) String() 
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceRegisterPrimaryUsingSocialLoginResult struct {
 	Success *RegisterPrimaryResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException           `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -8215,7 +8215,7 @@ func (p *PrimaryAccountInitServiceRegisterPrimaryUsingSocialLoginResult) String(
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceMigratePrimaryUsingSocialLoginArgs struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -8314,8 +8314,8 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingSocialLoginArgs) String() s
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceMigratePrimaryUsingSocialLoginResult struct {
 	Success *MigratePrimaryResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException          `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -8474,7 +8474,7 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingSocialLoginResult) String()
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceMigratePrimaryUsingPhoneArgs struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -8573,8 +8573,8 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingPhoneArgs) String() string 
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceMigratePrimaryUsingPhoneResult struct {
 	Success *MigratePrimaryResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException          `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -8733,7 +8733,7 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingPhoneResult) String() strin
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceGetSecondAuthMethodArgs struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -8832,8 +8832,8 @@ func (p *PrimaryAccountInitServiceGetSecondAuthMethodArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetSecondAuthMethodResult struct {
 	Success *GetSecondAuthMethodResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException               `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -8992,7 +8992,7 @@ func (p *PrimaryAccountInitServiceGetSecondAuthMethodResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceIssueWebAuthDetailsForSecondAuthArgs struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -9091,8 +9091,8 @@ func (p *PrimaryAccountInitServiceIssueWebAuthDetailsForSecondAuthArgs) String()
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceIssueWebAuthDetailsForSecondAuthResult struct {
 	Success *IssueWebAuthDetailsForSecondAuthResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                            `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -9251,8 +9251,8 @@ func (p *PrimaryAccountInitServiceIssueWebAuthDetailsForSecondAuthResult) String
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - AccountIdentifier
+//   - AuthSessionId
+//   - AccountIdentifier
 type PrimaryAccountInitServiceIssueWebAuthDetailsForAcctVerifArgs struct {
 	AuthSessionId     string             `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	AccountIdentifier *AccountIdentifier `thrift:"accountIdentifier,2" db:"accountIdentifier" json:"accountIdentifier"`
@@ -9399,8 +9399,8 @@ func (p *PrimaryAccountInitServiceIssueWebAuthDetailsForAcctVerifArgs) String() 
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceIssueWebAuthDetailsForAcctVerifResult struct {
 	Success *IssueWebAuthDetailsForAcctVerifResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                           `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -9559,7 +9559,7 @@ func (p *PrimaryAccountInitServiceIssueWebAuthDetailsForAcctVerifResult) String(
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryAccountInitServiceOpenSessionArgs struct {
 	Request *OpenSessionRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -9666,8 +9666,8 @@ func (p *PrimaryAccountInitServiceOpenSessionArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceOpenSessionResult struct {
 	Success *string        `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -9827,9 +9827,9 @@ func (p *PrimaryAccountInitServiceOpenSessionResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - AccountIdentifier
-//  - EncryptedPassword
+//   - AuthSessionId
+//   - AccountIdentifier
+//   - EncryptedPassword
 type PrimaryAccountInitServiceVerifyAccountUsingPwdArgs struct {
 	AuthSessionId     string             `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	AccountIdentifier *AccountIdentifier `thrift:"accountIdentifier,2" db:"accountIdentifier" json:"accountIdentifier"`
@@ -10024,8 +10024,8 @@ func (p *PrimaryAccountInitServiceVerifyAccountUsingPwdArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceVerifyAccountUsingPwdResult struct {
 	Success *VerifyAccountUsingPwdResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                 `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -10184,9 +10184,9 @@ func (p *PrimaryAccountInitServiceVerifyAccountUsingPwdResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - Device
-//  - SocialLogin
+//   - AuthSessionId
+//   - Device
+//   - SocialLogin
 type PrimaryAccountInitServiceVerifySocialLoginArgs struct {
 	AuthSessionId string       `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	Device        *Device      `thrift:"device,2" db:"device" json:"device"`
@@ -10381,8 +10381,8 @@ func (p *PrimaryAccountInitServiceVerifySocialLoginArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceVerifySocialLoginResult struct {
 	Success *VerifySocialLoginResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException             `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -10541,9 +10541,9 @@ func (p *PrimaryAccountInitServiceVerifySocialLoginResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
 type PrimaryAccountInitServiceGetPhoneVerifMethodArgs struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	Device          *Device          `thrift:"device,2" db:"device" json:"device"`
@@ -10738,8 +10738,8 @@ func (p *PrimaryAccountInitServiceGetPhoneVerifMethodArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetPhoneVerifMethodResult struct {
 	Success *GetPhoneVerifMethodResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException               `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -10898,10 +10898,10 @@ func (p *PrimaryAccountInitServiceGetPhoneVerifMethodResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
-//  - VerifMethod
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
+//   - VerifMethod
 type PrimaryAccountInitServiceSendPinCodeForPhoneArgs struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	Device          *Device          `thrift:"device,2" db:"device" json:"device"`
@@ -11137,8 +11137,8 @@ func (p *PrimaryAccountInitServiceSendPinCodeForPhoneArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceSendPinCodeForPhoneResult struct {
 	Success *SendPinCodeForPhoneResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException               `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -11297,10 +11297,10 @@ func (p *PrimaryAccountInitServiceSendPinCodeForPhoneResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - Device
-//  - UserPhoneNumber
-//  - PinCode
+//   - AuthSessionId
+//   - Device
+//   - UserPhoneNumber
+//   - PinCode
 type PrimaryAccountInitServiceVerifyPhoneArgs struct {
 	AuthSessionId   string           `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	Device          *Device          `thrift:"device,2" db:"device" json:"device"`
@@ -11535,8 +11535,8 @@ func (p *PrimaryAccountInitServiceVerifyPhoneArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceVerifyPhoneResult struct {
 	Success *VerifyPhoneResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException       `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -11695,8 +11695,8 @@ func (p *PrimaryAccountInitServiceVerifyPhoneResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - EncryptedPassword
+//   - AuthSessionId
+//   - EncryptedPassword
 type PrimaryAccountInitServiceSetPasswordArgs struct {
 	AuthSessionId     string             `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	EncryptedPassword *EncryptedPassword `thrift:"encryptedPassword,2" db:"encryptedPassword" json:"encryptedPassword"`
@@ -11843,7 +11843,7 @@ func (p *PrimaryAccountInitServiceSetPasswordArgs) String() string {
 }
 
 // Attributes:
-//  - E
+//   - E
 type PrimaryAccountInitServiceSetPasswordResult struct {
 	E *AuthException `thrift:"e,1" db:"e" json:"e,omitempty"`
 }
@@ -11952,8 +11952,8 @@ func (p *PrimaryAccountInitServiceSetPasswordResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - Request
+//   - AuthSessionId
+//   - Request
 type PrimaryAccountInitServiceExchangeEncryptionKeyArgs struct {
 	AuthSessionId string                        `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	Request       *ExchangeEncryptionKeyRequest `thrift:"request,2" db:"request" json:"request"`
@@ -12100,8 +12100,8 @@ func (p *PrimaryAccountInitServiceExchangeEncryptionKeyArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceExchangeEncryptionKeyResult struct {
 	Success *ExchangeEncryptionKeyResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                 `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -12260,8 +12260,8 @@ func (p *PrimaryAccountInitServiceExchangeEncryptionKeyResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - SimCard
+//   - AuthSessionId
+//   - SimCard
 type PrimaryAccountInitServiceGetCountryInfoArgs struct {
 	AuthSessionId string   `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	SimCard       *SimCard `thrift:"simCard,2" db:"simCard" json:"simCard"`
@@ -12408,8 +12408,8 @@ func (p *PrimaryAccountInitServiceGetCountryInfoArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetCountryInfoResult struct {
 	Success *GetCountryInfoResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException          `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -12568,8 +12568,8 @@ func (p *PrimaryAccountInitServiceGetCountryInfoResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - AccountIdentifier
+//   - AuthSessionId
+//   - AccountIdentifier
 type PrimaryAccountInitServiceGetUserProfileArgs struct {
 	AuthSessionId     string             `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	AccountIdentifier *AccountIdentifier `thrift:"accountIdentifier,2" db:"accountIdentifier" json:"accountIdentifier"`
@@ -12716,8 +12716,8 @@ func (p *PrimaryAccountInitServiceGetUserProfileArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetUserProfileResult struct {
 	Success *GetUserProfileResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException          `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -12876,8 +12876,8 @@ func (p *PrimaryAccountInitServiceGetUserProfileResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - AccountIdentifier
+//   - AuthSessionId
+//   - AccountIdentifier
 type PrimaryAccountInitServiceGetAcctVerifMethodArgs struct {
 	AuthSessionId     string             `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	AccountIdentifier *AccountIdentifier `thrift:"accountIdentifier,2" db:"accountIdentifier" json:"accountIdentifier"`
@@ -13024,8 +13024,8 @@ func (p *PrimaryAccountInitServiceGetAcctVerifMethodArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetAcctVerifMethodResult struct {
 	Success *GetAcctVerifMethodResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException              `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -13184,8 +13184,8 @@ func (p *PrimaryAccountInitServiceGetAcctVerifMethodResult) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - DisplayName
+//   - AuthSessionId
+//   - DisplayName
 type PrimaryAccountInitServiceValidateProfileArgs struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	DisplayName   string `thrift:"displayName,2" db:"displayName" json:"displayName"`
@@ -13324,7 +13324,7 @@ func (p *PrimaryAccountInitServiceValidateProfileArgs) String() string {
 }
 
 // Attributes:
-//  - E
+//   - E
 type PrimaryAccountInitServiceValidateProfileResult struct {
 	E *AuthException `thrift:"e,1" db:"e" json:"e,omitempty"`
 }
@@ -13433,7 +13433,7 @@ func (p *PrimaryAccountInitServiceValidateProfileResult) String() string {
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryAccountInitServiceFetchPhonePinCodeMsgArgs struct {
 	Request *FetchPhonePinCodeMsgRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -13540,8 +13540,8 @@ func (p *PrimaryAccountInitServiceFetchPhonePinCodeMsgArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceFetchPhonePinCodeMsgResult struct {
 	Success *FetchPhonePinCodeMsgResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -13700,7 +13700,7 @@ func (p *PrimaryAccountInitServiceFetchPhonePinCodeMsgResult) String() string {
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryAccountInitServiceGetPhoneVerifMethodV2Args struct {
 	Request *GetPhoneVerifMethodV2Request `thrift:"request,1" db:"request" json:"request"`
 }
@@ -13807,8 +13807,8 @@ func (p *PrimaryAccountInitServiceGetPhoneVerifMethodV2Args) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetPhoneVerifMethodV2Result struct {
 	Success *GetPhoneVerifMethodV2Response `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                 `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -13967,7 +13967,7 @@ func (p *PrimaryAccountInitServiceGetPhoneVerifMethodV2Result) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceGetSessionContentBeforeMigCompletionArgs struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -14066,8 +14066,8 @@ func (p *PrimaryAccountInitServiceGetSessionContentBeforeMigCompletionArgs) Stri
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceGetSessionContentBeforeMigCompletionResult struct {
 	Success *GetSessionContentBeforeMigCompletionResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                                `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -14226,7 +14226,7 @@ func (p *PrimaryAccountInitServiceGetSessionContentBeforeMigCompletionResult) St
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceMigratePrimaryUsingEapAccountWithTokenV3Args struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -14325,8 +14325,8 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingEapAccountWithTokenV3Args) 
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceMigratePrimaryUsingEapAccountWithTokenV3Result struct {
 	Success *MigratePrimaryWithTokenV3Response `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                     `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -14485,7 +14485,7 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingEapAccountWithTokenV3Result
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceMigratePrimaryUsingPhoneWithTokenV3Args struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -14584,8 +14584,8 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingPhoneWithTokenV3Args) Strin
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceMigratePrimaryUsingPhoneWithTokenV3Result struct {
 	Success *MigratePrimaryWithTokenV3Response `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                     `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -14744,7 +14744,7 @@ func (p *PrimaryAccountInitServiceMigratePrimaryUsingPhoneWithTokenV3Result) Str
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type PrimaryAccountInitServiceRegisterPrimaryUsingPhoneWithTokenV3Args struct {
 	// unused field # 1
 	AuthSessionId string `thrift:"authSessionId,2" db:"authSessionId" json:"authSessionId"`
@@ -14844,8 +14844,8 @@ func (p *PrimaryAccountInitServiceRegisterPrimaryUsingPhoneWithTokenV3Args) Stri
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceRegisterPrimaryUsingPhoneWithTokenV3Result struct {
 	Success *RegisterPrimaryWithTokenV3Response `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                      `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -15004,7 +15004,7 @@ func (p *PrimaryAccountInitServiceRegisterPrimaryUsingPhoneWithTokenV3Result) St
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryAccountInitServiceRequestToSendPhonePinCodeArgs struct {
 	Request *ReqToSendPhonePinCodeRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -15111,8 +15111,8 @@ func (p *PrimaryAccountInitServiceRequestToSendPhonePinCodeArgs) String() string
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceRequestToSendPhonePinCodeResult struct {
 	Success *ReqToSendPhonePinCodeResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException                 `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -15271,7 +15271,7 @@ func (p *PrimaryAccountInitServiceRequestToSendPhonePinCodeResult) String() stri
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryAccountInitServiceVerifyPhonePinCodeArgs struct {
 	Request *VerifyPhonePinCodeRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -15378,8 +15378,8 @@ func (p *PrimaryAccountInitServiceVerifyPhonePinCodeArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceVerifyPhonePinCodeResult struct {
 	Success *VerifyPhonePinCodeResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException              `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -15538,7 +15538,7 @@ func (p *PrimaryAccountInitServiceVerifyPhonePinCodeResult) String() string {
 }
 
 // Attributes:
-//  - ErrorCode
+//   - ErrorCode
 type AccessTokenRefreshException struct {
 	ErrorCode int64 `thrift:"errorCode,1" db:"errorCode" json:"errorCode"`
 }
@@ -15641,7 +15641,7 @@ func (p *AccessTokenRefreshException) Error() string {
 }
 
 // Attributes:
-//  - RefreshToken
+//   - RefreshToken
 type RefreshAccessTokenRequest struct {
 	RefreshToken string `thrift:"refreshToken,1" db:"refreshToken" json:"refreshToken"`
 }
@@ -15740,11 +15740,11 @@ func (p *RefreshAccessTokenRequest) String() string {
 }
 
 // Attributes:
-//  - AccessToken
-//  - DurationUntilRefreshInSec
-//  - RetryPolicy
-//  - TokenIssueTimeEpochSec
-//  - RefreshToken
+//   - AccessToken
+//   - DurationUntilRefreshInSec
+//   - RetryPolicy
+//   - TokenIssueTimeEpochSec
+//   - RefreshToken
 type RefreshAccessTokenResponse struct {
 	AccessToken               string                 `thrift:"accessToken,1" db:"accessToken" json:"accessToken"`
 	DurationUntilRefreshInSec int64                  `thrift:"durationUntilRefreshInSec,2" db:"durationUntilRefreshInSec" json:"durationUntilRefreshInSec"`
@@ -16011,7 +16011,7 @@ func (p *RefreshAccessTokenResponse) String() string {
 }
 
 // Attributes:
-//  - AccessToken
+//   - AccessToken
 type ReportRefreshedAccessTokenRequest struct {
 	AccessToken string `thrift:"accessToken,1" db:"accessToken" json:"accessToken"`
 }
@@ -16145,7 +16145,7 @@ func (p *AccessTokenRefreshServiceClient) Client_() thrift.TClient {
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *AccessTokenRefreshServiceClient) Refresh(ctx context.Context, request *RefreshAccessTokenRequest) (r *RefreshAccessTokenResponse, err error) {
 	var _args156 AccessTokenRefreshServiceRefreshArgs
 	_args156.Request = request
@@ -16162,7 +16162,7 @@ func (p *AccessTokenRefreshServiceClient) Refresh(ctx context.Context, request *
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *AccessTokenRefreshServiceClient) ReportRefreshedAccessToken(ctx context.Context, request *ReportRefreshedAccessTokenRequest) (err error) {
 	var _args158 AccessTokenRefreshServiceReportRefreshedAccessTokenArgs
 	_args158.Request = request
@@ -16181,7 +16181,7 @@ func (p *AccessTokenRefreshServiceClient) ReportRefreshedAccessToken(ctx context
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Request
+//   - Request
 type AccessTokenRefreshServiceRefreshArgs struct {
 	Request *RefreshAccessTokenRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -16288,8 +16288,8 @@ func (p *AccessTokenRefreshServiceRefreshArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type AccessTokenRefreshServiceRefreshResult struct {
 	Success *RefreshAccessTokenResponse  `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AccessTokenRefreshException `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -16448,7 +16448,7 @@ func (p *AccessTokenRefreshServiceRefreshResult) String() string {
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type AccessTokenRefreshServiceReportRefreshedAccessTokenArgs struct {
 	Request *ReportRefreshedAccessTokenRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -16555,7 +16555,7 @@ func (p *AccessTokenRefreshServiceReportRefreshedAccessTokenArgs) String() strin
 }
 
 // Attributes:
-//  - E
+//   - E
 type AccessTokenRefreshServiceReportRefreshedAccessTokenResult struct {
 	E *AccessTokenRefreshException `thrift:"e,1" db:"e" json:"e,omitempty"`
 }
@@ -16807,9 +16807,9 @@ func (p *EapType) Value() (driver.Value, error) {
 }
 
 // Attributes:
-//  - Code
-//  - AlertMessage
-//  - WebAuthDetails
+//   - Code
+//   - AlertMessage
+//   - WebAuthDetails
 type AccountEapConnectException struct {
 	Code         AccountEapConnectErrorCode `thrift:"code,1" db:"code" json:"code"`
 	AlertMessage string                     `thrift:"alertMessage,2" db:"alertMessage" json:"alertMessage"`
@@ -17002,7 +17002,7 @@ func (p *AccountEapConnectException) Error() string {
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type ConnectEapAccountRequest struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -17101,7 +17101,7 @@ func (p *ConnectEapAccountRequest) String() string {
 }
 
 // Attributes:
-//  - EapType
+//   - EapType
 type DisconnectEapAccountRequest struct {
 	EapType EapType `thrift:"eapType,1" db:"eapType" json:"eapType"`
 }
@@ -17201,7 +17201,7 @@ func (p *DisconnectEapAccountRequest) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type OpenSessionEapResponse struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -17300,7 +17300,7 @@ func (p *OpenSessionEapResponse) String() string {
 }
 
 // Attributes:
-//  - Device
+//   - Device
 type OpenSessionEapRequest struct {
 	Device *Device `thrift:"device,1" db:"device" json:"device"`
 }
@@ -17407,7 +17407,7 @@ func (p *OpenSessionEapRequest) String() string {
 }
 
 // Attributes:
-//  - AccountExists
+//   - AccountExists
 type VerifyEapLoginResponse struct {
 	AccountExists bool `thrift:"accountExists,1" db:"accountExists" json:"accountExists"`
 }
@@ -17506,8 +17506,8 @@ func (p *VerifyEapLoginResponse) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - AccessToken
+//   - Type
+//   - AccessToken
 type EapLogin struct {
 	Type        EapType `thrift:"type,1" db:"type" json:"type"`
 	AccessToken string  `thrift:"accessToken,2" db:"accessToken" json:"accessToken"`
@@ -17647,8 +17647,8 @@ func (p *EapLogin) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
-//  - EapLogin
+//   - AuthSessionId
+//   - EapLogin
 type VerifyEapLoginRequest struct {
 	AuthSessionId string    `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 	EapLogin      *EapLogin `thrift:"eapLogin,2" db:"eapLogin" json:"eapLogin"`
@@ -17836,7 +17836,7 @@ func (p *AccountAuthFactorEapConnectServiceClient) Client_() thrift.TClient {
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *AccountAuthFactorEapConnectServiceClient) ConnectEapAccount(ctx context.Context, request *ConnectEapAccountRequest) (err error) {
 	var _args0 AccountAuthFactorEapConnectServiceConnectEapAccountArgs
 	_args0.Request = request
@@ -17853,7 +17853,7 @@ func (p *AccountAuthFactorEapConnectServiceClient) ConnectEapAccount(ctx context
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *AccountAuthFactorEapConnectServiceClient) DisconnectEapAccount(ctx context.Context, request *DisconnectEapAccountRequest) (err error) {
 	var _args2 AccountAuthFactorEapConnectServiceDisconnectEapAccountArgs
 	_args2.Request = request
@@ -17870,7 +17870,7 @@ func (p *AccountAuthFactorEapConnectServiceClient) DisconnectEapAccount(ctx cont
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *AccountAuthFactorEapConnectServiceClient) OpenSession(ctx context.Context, request *OpenSessionEapRequest) (r *OpenSessionEapResponse, err error) {
 	var _args4 AccountAuthFactorEapConnectServiceOpenSessionArgs
 	_args4.Request = request
@@ -17887,7 +17887,7 @@ func (p *AccountAuthFactorEapConnectServiceClient) OpenSession(ctx context.Conte
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *AccountAuthFactorEapConnectServiceClient) VerifyEapLogin(ctx context.Context, request *VerifyEapLoginRequest) (r *VerifyEapLoginResponse, err error) {
 	var _args6 AccountAuthFactorEapConnectServiceVerifyEapLoginArgs
 	_args6.Request = request
@@ -17906,7 +17906,7 @@ func (p *AccountAuthFactorEapConnectServiceClient) VerifyEapLogin(ctx context.Co
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Request
+//   - Request
 type AccountAuthFactorEapConnectServiceConnectEapAccountArgs struct {
 	Request *ConnectEapAccountRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -18013,7 +18013,7 @@ func (p *AccountAuthFactorEapConnectServiceConnectEapAccountArgs) String() strin
 }
 
 // Attributes:
-//  - E
+//   - E
 type AccountAuthFactorEapConnectServiceConnectEapAccountResult struct {
 	E *AccountEapConnectException `thrift:"e,1" db:"e" json:"e,omitempty"`
 }
@@ -18122,7 +18122,7 @@ func (p *AccountAuthFactorEapConnectServiceConnectEapAccountResult) String() str
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type AccountAuthFactorEapConnectServiceDisconnectEapAccountArgs struct {
 	Request *DisconnectEapAccountRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -18229,7 +18229,7 @@ func (p *AccountAuthFactorEapConnectServiceDisconnectEapAccountArgs) String() st
 }
 
 // Attributes:
-//  - E
+//   - E
 type AccountAuthFactorEapConnectServiceDisconnectEapAccountResult struct {
 	E *AccountEapConnectException `thrift:"e,1" db:"e" json:"e,omitempty"`
 }
@@ -18338,7 +18338,7 @@ func (p *AccountAuthFactorEapConnectServiceDisconnectEapAccountResult) String() 
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type AccountAuthFactorEapConnectServiceOpenSessionArgs struct {
 	Request *OpenSessionEapRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -18445,8 +18445,8 @@ func (p *AccountAuthFactorEapConnectServiceOpenSessionArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type AccountAuthFactorEapConnectServiceOpenSessionResult struct {
 	Success *OpenSessionEapResponse     `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AccountEapConnectException `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -18605,7 +18605,7 @@ func (p *AccountAuthFactorEapConnectServiceOpenSessionResult) String() string {
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type AccountAuthFactorEapConnectServiceVerifyEapLoginArgs struct {
 	Request *VerifyEapLoginRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -18712,8 +18712,8 @@ func (p *AccountAuthFactorEapConnectServiceVerifyEapLoginArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type AccountAuthFactorEapConnectServiceVerifyEapLoginResult struct {
 	Success *VerifyEapLoginResponse     `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AccountEapConnectException `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -19020,8 +19020,8 @@ func (p *TokenAuthExceptionCode) Value() (driver.Value, error) {
 }
 
 // Attributes:
-//  - Code
-//  - Reason
+//   - Code
+//   - Reason
 type TokenAuthException struct {
 	Code   TokenAuthExceptionCode `thrift:"code,1" db:"code" json:"code"`
 	Reason string                 `thrift:"reason,2" db:"reason" json:"reason"`
@@ -19186,8 +19186,8 @@ func (TokenAuthException) TExceptionType() thrift.TExceptionType {
 var _ thrift.TException = (*TokenAuthException)(nil)
 
 // Attributes:
-//  - Code
-//  - ErrorMessage
+//   - Code
+//   - ErrorMessage
 type PrimaryQrCodeMigrationException struct {
 	Code         PrimaryQrCodeMigrationExceptionCode `thrift:"code,1" db:"code" json:"code"`
 	ErrorMessage string                              `thrift:"errorMessage,2" db:"errorMessage" json:"errorMessage"`
@@ -19352,8 +19352,8 @@ func (PrimaryQrCodeMigrationException) TExceptionType() thrift.TExceptionType {
 var _ thrift.TException = (*PrimaryQrCodeMigrationException)(nil)
 
 // Attributes:
-//  - RecoveryKey
-//  - BackupBlobPayload
+//   - RecoveryKey
+//   - BackupBlobPayload
 type EncryptedBinary struct {
 	RecoveryKey       []byte `thrift:"recoveryKey,1" db:"recoveryKey" json:"recoveryKey"`
 	BackupBlobPayload []byte `thrift:"backupBlobPayload,2" db:"backupBlobPayload" json:"backupBlobPayload"`
@@ -19501,8 +19501,8 @@ func (p *EncryptedBinary) String() string {
 }
 
 // Attributes:
-//  - SessionId
-//  - EncryptedSecureChannelPayload
+//   - SessionId
+//   - EncryptedSecureChannelPayload
 type SendEncryptedE2EEKeyRequest struct {
 	SessionId                     string           `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
 	EncryptedSecureChannelPayload *EncryptedBinary `thrift:"encryptedSecureChannelPayload,2" db:"encryptedSecureChannelPayload" json:"encryptedSecureChannelPayload"`
@@ -19728,7 +19728,7 @@ func (p *CreateSessionRequest) String() string {
 }
 
 // Attributes:
-//  - SessionId
+//   - SessionId
 type CreateQRMigrationSessionResponse struct {
 	SessionId string `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
 }
@@ -19839,8 +19839,8 @@ func (p *CreateQRMigrationSessionResponse) String() string {
 }
 
 // Attributes:
-//  - NewDevicePublicKey_
-//  - EncryptedQrIdentifier
+//   - NewDevicePublicKey_
+//   - EncryptedQrIdentifier
 type SecureChannelData struct {
 	NewDevicePublicKey_   []byte `thrift:"newDevicePublicKey,1" db:"newDevicePublicKey" json:"newDevicePublicKey"`
 	EncryptedQrIdentifier string `thrift:"encryptedQrIdentifier,2" db:"encryptedQrIdentifier" json:"encryptedQrIdentifier"`
@@ -19991,8 +19991,8 @@ func (p *SecureChannelData) String() string {
 }
 
 // Attributes:
-//  - SessionId
-//  - SecureChannelData
+//   - SessionId
+//   - SecureChannelData
 type CheckIfEncryptedE2EEKeyReceivedRequest struct {
 	SessionId         string             `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
 	SecureChannelData *SecureChannelData `thrift:"secureChannelData,2" db:"secureChannelData" json:"secureChannelData"`
@@ -20154,8 +20154,8 @@ func (p *CheckIfEncryptedE2EEKeyReceivedRequest) String() string {
 }
 
 // Attributes:
-//  - DisplayName
-//  - ProfileImageUrl
+//   - DisplayName
+//   - ProfileImageUrl
 type UserProfile struct {
 	DisplayName     string `thrift:"displayName,1" db:"displayName" json:"displayName"`
 	ProfileImageUrl string `thrift:"profileImageUrl,2" db:"profileImageUrl" json:"profileImageUrl"`
@@ -20309,11 +20309,11 @@ func (p *UserProfile) String() string {
 }
 
 // Attributes:
-//  - Nonce
-//  - EncryptedSecureChannelPayload
-//  - UserProfile
-//  - AppTypeDifferentFromPrevDevice
-//  - E2eeKeyBackupServiceConfig
+//   - Nonce
+//   - EncryptedSecureChannelPayload
+//   - UserProfile
+//   - AppTypeDifferentFromPrevDevice
+//   - E2eeKeyBackupServiceConfig
 type CheckIfEncryptedE2EEKeyReceivedResponse struct {
 	Nonce                          string           `thrift:"nonce,1" db:"nonce" json:"nonce"`
 	EncryptedSecureChannelPayload  *EncryptedBinary `thrift:"encryptedSecureChannelPayload,2" db:"encryptedSecureChannelPayload" json:"encryptedSecureChannelPayload"`
@@ -20656,7 +20656,7 @@ func (p *PrimaryQrCodeMigrationPreparationServiceClient) SetLastResponseMeta_(me
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryQrCodeMigrationPreparationServiceClient) CreateQRMigrationSession(ctx context.Context, request *CreateSessionRequest) (_r *CreateQRMigrationSessionResponse, _err error) {
 	var _args0 PrimaryQrCodeMigrationPreparationServiceCreateQRMigrationSessionArgs
 	_args0.Request = request
@@ -20681,7 +20681,7 @@ func (p *PrimaryQrCodeMigrationPreparationServiceClient) CreateQRMigrationSessio
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryQrCodeMigrationPreparationServiceClient) SendEncryptedE2EEKey(ctx context.Context, request *SendEncryptedE2EEKeyRequest) (_err error) {
 	var _args4 PrimaryQrCodeMigrationPreparationServiceSendEncryptedE2EEKeyArgs
 	_args4.Request = request
@@ -20705,7 +20705,7 @@ func (p *PrimaryQrCodeMigrationPreparationServiceClient) SendEncryptedE2EEKey(ct
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryQrCodeMigrationPreparationServiceCreateQRMigrationSessionArgs struct {
 	Request *CreateSessionRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -20812,9 +20812,9 @@ func (p *PrimaryQrCodeMigrationPreparationServiceCreateQRMigrationSessionArgs) S
 }
 
 // Attributes:
-//  - Success
-//  - Pqme
-//  - Tae
+//   - Success
+//   - Pqme
+//   - Tae
 type PrimaryQrCodeMigrationPreparationServiceCreateQRMigrationSessionResult struct {
 	Success *CreateQRMigrationSessionResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	Pqme    *PrimaryQrCodeMigrationException  `thrift:"pqme,1" db:"pqme" json:"pqme,omitempty"`
@@ -21023,7 +21023,7 @@ func (p *PrimaryQrCodeMigrationPreparationServiceCreateQRMigrationSessionResult)
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryQrCodeMigrationPreparationServiceSendEncryptedE2EEKeyArgs struct {
 	Request *SendEncryptedE2EEKeyRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -21130,8 +21130,8 @@ func (p *PrimaryQrCodeMigrationPreparationServiceSendEncryptedE2EEKeyArgs) Strin
 }
 
 // Attributes:
-//  - Pqme
-//  - Tae
+//   - Pqme
+//   - Tae
 type PrimaryQrCodeMigrationPreparationServiceSendEncryptedE2EEKeyResult struct {
 	Pqme *PrimaryQrCodeMigrationException `thrift:"pqme,1" db:"pqme" json:"pqme,omitempty"`
 	Tae  *TokenAuthException              `thrift:"tae,2" db:"tae" json:"tae,omitempty"`
@@ -21331,7 +21331,7 @@ func (p *PrimaryQrCodeMigrationLongPollingServiceClient) SetLastResponseMeta_(me
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryQrCodeMigrationLongPollingServiceClient) CheckIfEncryptedE2EEKeyReceived(ctx context.Context, request *CheckIfEncryptedE2EEKeyReceivedRequest) (_r *CheckIfEncryptedE2EEKeyReceivedResponse, _err error) {
 	var _args21 PrimaryQrCodeMigrationLongPollingServiceCheckIfEncryptedE2EEKeyReceivedArgs
 	_args21.Request = request
@@ -21354,9 +21354,9 @@ func (p *PrimaryQrCodeMigrationLongPollingServiceClient) CheckIfEncryptedE2EEKey
 }
 
 // Attributes:
-//  - SessionId
-//  - Nonce
-//  - NewDevice_
+//   - SessionId
+//   - Nonce
+//   - NewDevice_
 type MigratePrimaryUsingQrCodeRequest struct {
 	SessionId  string   `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
 	Nonce      string   `thrift:"nonce,2" db:"nonce" json:"nonce"`
@@ -21558,7 +21558,7 @@ func (p *MigratePrimaryUsingQrCodeRequest) String() string {
 }
 
 // Attributes:
-//  - AuthSessionId
+//   - AuthSessionId
 type LookupAvailableEapRequest struct {
 	AuthSessionId string `thrift:"authSessionId,1" db:"authSessionId" json:"authSessionId"`
 }
@@ -21669,7 +21669,7 @@ func (p *LookupAvailableEapRequest) String() string {
 }
 
 // Attributes:
-//  - AvailableEaps
+//   - AvailableEaps
 type LookupAvailableEapResponse struct {
 	AvailableEaps []SocialLoginType `thrift:"availableEaps,1" db:"availableEaps" json:"availableEaps"`
 }
@@ -21808,11 +21808,11 @@ func (p *LookupAvailableEapResponse) String() string {
 }
 
 // Attributes:
-//  - Mid
-//  - TokenV3IssueResult_
-//  - TokenV1IssueResult_
-//  - AccountCountryCode
-//  - FormattedPhoneNumbers
+//   - Mid
+//   - TokenV3IssueResult_
+//   - TokenV1IssueResult_
+//   - AccountCountryCode
+//   - FormattedPhoneNumbers
 type MigratePrimaryUsingQrCodeResponse struct {
 	Mid                   string                 `thrift:"mid,1" db:"mid" json:"mid"`
 	TokenV3IssueResult_   *TokenV3IssueResult_   `thrift:"tokenV3IssueResult,2" db:"tokenV3IssueResult" json:"tokenV3IssueResult"`
@@ -22124,7 +22124,7 @@ func (p *MigratePrimaryUsingQrCodeResponse) String() string {
 }
 
 // Attributes:
-//  - TokenSecret
+//   - TokenSecret
 type TokenV1IssueResult_ struct {
 	TokenSecret string `thrift:"tokenSecret,1" db:"tokenSecret" json:"tokenSecret"`
 }
@@ -22235,7 +22235,7 @@ func (p *TokenV1IssueResult_) String() string {
 }
 
 // Attributes:
-//  - Code
+//   - Code
 type CountryCode struct {
 	Code string `thrift:"code,1" db:"code" json:"code"`
 }
@@ -22346,8 +22346,8 @@ func (p *CountryCode) String() string {
 }
 
 // Attributes:
-//  - LocalFormatPhoneNumber
-//  - PrettifiedFormatPhoneNumber
+//   - LocalFormatPhoneNumber
+//   - PrettifiedFormatPhoneNumber
 type FormattedPhoneNumbers struct {
 	LocalFormatPhoneNumber      string `thrift:"localFormatPhoneNumber,1" db:"localFormatPhoneNumber" json:"localFormatPhoneNumber"`
 	PrettifiedFormatPhoneNumber string `thrift:"prettifiedFormatPhoneNumber,2" db:"prettifiedFormatPhoneNumber" json:"prettifiedFormatPhoneNumber"`
@@ -22542,7 +22542,7 @@ func (p *PrimaryQrCodeMigrationServiceClient) SetLastResponseMeta_(meta thrift.R
 }
 
 // Parameters:
-//  - Request
+//   - Request
 func (p *PrimaryQrCodeMigrationServiceClient) MigratePrimaryUsingQrCode(ctx context.Context, request *MigratePrimaryUsingQrCodeRequest) (_r *MigratePrimaryUsingQrCodeResponse, _err error) {
 	var _args33 PrimaryQrCodeMigrationServiceMigratePrimaryUsingQrCodeArgs
 	_args33.Request = request
@@ -22567,7 +22567,7 @@ func (p *PrimaryQrCodeMigrationServiceClient) MigratePrimaryUsingQrCode(ctx cont
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryQrCodeMigrationServiceMigratePrimaryUsingQrCodeArgs struct {
 	Request *MigratePrimaryUsingQrCodeRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -22674,8 +22674,8 @@ func (p *PrimaryQrCodeMigrationServiceMigratePrimaryUsingQrCodeArgs) String() st
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryQrCodeMigrationServiceMigratePrimaryUsingQrCodeResult struct {
 	Success *MigratePrimaryUsingQrCodeResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *PrimaryQrCodeMigrationException   `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -22834,7 +22834,7 @@ func (p *PrimaryQrCodeMigrationServiceMigratePrimaryUsingQrCodeResult) String() 
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryQrCodeMigrationLongPollingServiceCheckIfEncryptedE2EEKeyReceivedArgs struct {
 	Request *CheckIfEncryptedE2EEKeyReceivedRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -22941,8 +22941,8 @@ func (p *PrimaryQrCodeMigrationLongPollingServiceCheckIfEncryptedE2EEKeyReceived
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryQrCodeMigrationLongPollingServiceCheckIfEncryptedE2EEKeyReceivedResult struct {
 	Success *CheckIfEncryptedE2EEKeyReceivedResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *PrimaryQrCodeMigrationException         `thrift:"e,1" db:"e" json:"e,omitempty"`
@@ -23101,7 +23101,7 @@ func (p *PrimaryQrCodeMigrationLongPollingServiceCheckIfEncryptedE2EEKeyReceived
 }
 
 // Attributes:
-//  - Request
+//   - Request
 type PrimaryAccountInitServiceLookupAvailableEapArgs struct {
 	Request *LookupAvailableEapRequest `thrift:"request,1" db:"request" json:"request"`
 }
@@ -23208,8 +23208,8 @@ func (p *PrimaryAccountInitServiceLookupAvailableEapArgs) String() string {
 }
 
 // Attributes:
-//  - Success
-//  - E
+//   - Success
+//   - E
 type PrimaryAccountInitServiceLookupAvailableEapResult struct {
 	Success *LookupAvailableEapResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
 	E       *AuthException              `thrift:"e,1" db:"e" json:"e,omitempty"`

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/shillbie/register/LineThrift"
+	"github.com/aaa71541367/register/LineThrift"
 )
 
 func MarshalMentionees(msg *LineThrift.Message, prefix ...string) (*LineThrift.Message, []string) {

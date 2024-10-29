@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/shillbie/register/thrift"
+	"github.com/aaa71541367/register/thrift"
 )
 
 // (needed to ensure safety because of naive import list construction.)
@@ -57,9 +57,9 @@ func NewCompactMessageServiceClientProtocol(iprot thrift.TProtocol, oprot thrift
 }
 
 // Parameters:
-//  - msgTo
-//  - text
-//  - toType
+//   - msgTo
+//   - text
+//   - toType
 func (p *CompactMessageServiceClient) SendCompactText(ctx context.Context, msgTo string, text string, toType MIDType) (message *Message, err error) {
 	if len(msgTo) != 33 {
 		return nil, thrift.PrependError(fmt.Sprintf("%T write message error: ", p), fmt.Errorf("invalid target length"))
@@ -100,14 +100,14 @@ func (p *CompactMessageServiceClient) SendCompactText(ctx context.Context, msgTo
 }
 
 // Parameters:
-//  - msgTo
-//  - toType
-//  - e2eeVersion
-//  - salt
-//  - ciphertext
-//  - nonce
-//  - fromKeyId
-//  - toKeyId
+//   - msgTo
+//   - toType
+//   - e2eeVersion
+//   - salt
+//   - ciphertext
+//   - nonce
+//   - fromKeyId
+//   - toKeyId
 func (p *CompactMessageServiceClient) SendEncryptCompactMessage(ctx context.Context, msgTo string, toType MIDType, e2eeVersion int8, salt, ciphertext, nonce []byte, fromKeyId, toKeyId int32) (message *Message, err error) {
 	if len(msgTo) != 33 {
 		return nil, thrift.PrependError(fmt.Sprintf("%T write message error: ", p), fmt.Errorf("invalid target length"))

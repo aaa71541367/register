@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/shillbie/register/LineThrift"
+	"github.com/aaa71541367/register/LineThrift"
 	//"strconv"
 )
 
